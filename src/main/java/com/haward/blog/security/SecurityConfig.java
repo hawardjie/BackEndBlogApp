@@ -62,7 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                // requesters must come from https
+                // request must come from https
                 .requiresChannel().anyRequest().requiresSecure().and()
                 .cors().and().csrf().disable()
                 .authorizeRequests()
